@@ -1,0 +1,25 @@
+# ═══════════════════════════════════════════
+# Apache → Node.js Reverse Proxy (cPanel)
+# ═══════════════════════════════════════════
+
+# Passenger ile Node.js uygulamasını çalıştır
+PassengerAppType node
+PassengerStartupFile server.js
+PassengerNodejs /home/hidroana/nodevenv/nodeapp/18/bin/node
+
+# GZIP Sıkıştırma (performans)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Hassas dosyaları engelle (ek koruma katmanı)
+<FilesMatch "\.(env|git|gitignore|log|bak|sql|yml|yaml|toml|lock)$">
+    Require all denied
+</FilesMatch>
+
+# node_modules erişimi engelle
+<DirectoryMatch "node_modules">
+    Require all denied
+</DirectoryMatch>

@@ -1,0 +1,25 @@
+{
+  "name": "hidroana-mainweb",
+  "version": "1.0.0",
+  "description": "Hidroana Hydrogen Vehicle Team - Official Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "hidroana",
+    "hydrogen",
+    "fuel-cell",
+    "vehicle",
+    "university"
+  ],
+  "author": "Hidroana Team",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.5.2",
+    "helmet": "^8.1.0"
+  }
+}
